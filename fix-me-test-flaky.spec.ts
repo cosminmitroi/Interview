@@ -8,6 +8,7 @@ import { test, expect } from '@playwright/test';
  *  - relies on waitForTimeout (flaky)
  *  - brittle selectors (text-only)
  *  - assertion happens before network/UI have really finished updating
+ * Goal: Make this test reliable. Remove flakiness (no waitForTimeout) and avoid brittle selectors.
  */
 test('Activity loads more results (FLAKY — fix me)', async ({ page }) => {
   // Mock paginated API with variable latency
