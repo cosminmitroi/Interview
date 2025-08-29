@@ -1,5 +1,7 @@
-npm i
+# QA Test – Fix the Flaky Test
 
-npx playwright test
-
-BASE_URL=https://payset-lite-demo.example npx playwright test
+## Setup
+1. Clone this repo
+2. Install dependencies:
+   ```bash
+   npm install

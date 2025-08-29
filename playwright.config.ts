@@ -1,15 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
+  testDir: './tests',
   timeout: 30_000,
-  expect: { timeout: 5_000 },
-  retries: 1,
   use: {
-    baseURL: process.env.BASE_URL ?? 'http://localhost:3000',
-    trace: 'on-first-retry',
-    video: 'retain-on-failure',
+    baseURL: 'http://localhost:3000', // candidate can change if needed
+    trace: 'on-first-retry'
   },
   projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-  ],
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] }
+    }
+  ]
 });
